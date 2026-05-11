@@ -30,24 +30,44 @@
       --note-border: #e8624a;
       --contact-bg: #5a5a5a;
       --pad: 3.5rem 6vw;
+      --header-h: 272px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Source Sans 3', sans-serif; color: var(--text); line-height: 1.7; font-weight: 400; }
+
+    /* Smooth scroll with offset for sticky header */
+    html { scroll-behavior: smooth; }
+    section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 1rem); }
 
     /* HEADER */
     header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
     .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 4vw; }
     header img.logo { height: 260px; width: auto; display: block; }
+
     nav ul { list-style: none; display: flex; align-items: center; }
-    nav ul li a { display: block; padding: 0.6rem 1.1rem; color: var(--heading); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; font-family: 'Montserrat', sans-serif; border-radius: 4px; transition: background 0.2s, color 0.2s; }
+    nav ul li a {
+      display: block;
+      padding: 0.6rem 1.1rem;
+      color: var(--heading);
+      text-decoration: none;
+      font-size: 2rem;
+      font-weight: 800;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: -0.02em;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
     nav ul li a:hover { background: var(--sky); color: #fff; }
-    nav ul li a.contact-link { color: var(--heading); border-radius: 6px; margin-left: 0.5rem; padding: 0.6rem 1.2rem; }
+    nav ul li a.contact-link { color: var(--heading); border-radius: 6px; margin-left: 0.5rem; }
     nav ul li a.contact-link:hover { background: var(--sky); color: #fff; }
+
     .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
     .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--heading); margin: 5px 0; border-radius: 2px; }
 
     @media (max-width: 680px) {
       header img.logo { height: 110px; }
+      :root { --header-h: 122px; }
+      nav ul li a { font-size: 1.1rem; padding: 0.5rem 0.8rem; }
       .menu-toggle { display: block; }
       nav ul { flex-direction: column; display: none; padding: 0.5rem 0; border-top: 1px solid var(--border); }
       nav ul.open { display: flex; }
@@ -95,7 +115,7 @@
 
     .note { background: var(--note-bg); border-left: 4px solid var(--note-border); padding: 0.85rem 1rem; border-radius: 0 6px 6px 0; margin: 0.75rem 0 1.25rem; font-size: 0.97rem; font-style: italic; }
 
-    /* BASE TABLE */
+    /* TABLES */
     .table-wrap { overflow-x: auto; margin: 0.75rem 0 1rem; border-radius: 10px; border: 1px solid var(--border); }
     table { width: 100%; border-collapse: collapse; font-size: 0.97rem; min-width: 380px; }
     thead th { padding: 0.75rem 1rem; text-align: left; font-weight: 700; border-bottom: 2px solid rgba(0,0,0,0.1); font-size: 0.85rem; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.03em; color: #2b2b2b; }
@@ -104,22 +124,18 @@
     tbody td:nth-child(2) { color: #3a3a3a; font-weight: 700; font-size: 1.05rem; }
     tbody tr:last-child td { border-bottom: none; }
 
-    /* BLUE — Overnight: pastel header, very light rows */
-    .table-blue thead tr { background: #c8e8f7; }
-    .table-blue tbody tr:nth-child(odd)  { background: #fff; }
-    .table-blue tbody tr:nth-child(even) { background: #edf6fc; }
+    .table-blue   thead tr { background: #c8e8f7; }
+    .table-blue   tbody tr:nth-child(odd)  { background: #fff; }
+    .table-blue   tbody tr:nth-child(even) { background: #edf6fc; }
 
-    /* GREEN — Drop-In: pastel header, very light rows */
-    .table-green thead tr { background: #c8eed9; }
-    .table-green tbody tr:nth-child(odd)  { background: #fff; }
-    .table-green tbody tr:nth-child(even) { background: #edf7f1; }
+    .table-green  thead tr { background: #c8eed9; }
+    .table-green  tbody tr:nth-child(odd)  { background: #fff; }
+    .table-green  tbody tr:nth-child(even) { background: #edf7f1; }
 
-    /* ORANGE — Private Walks: pastel header, very light rows */
     .table-orange thead tr { background: #fdd9c0; }
     .table-orange tbody tr:nth-child(odd)  { background: #fff; }
     .table-orange tbody tr:nth-child(even) { background: #fef3ec; }
 
-    /* YELLOW — Group Walks: pastel header, very light rows */
     .table-yellow thead tr { background: #fdf3c0; }
     .table-yellow tbody tr:nth-child(odd)  { background: #fff; }
     .table-yellow tbody tr:nth-child(even) { background: #fefce8; }
@@ -143,14 +159,14 @@
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Services & Rates</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#contact" class="contact-link">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- CONTACT TOP — 3 bigger images -->
+  <!-- CONTACT TOP -->
   <div class="contact-bar align-left" id="contact-top">
     <div class="contact-bar-inner">
       <div class="contact-info">
@@ -168,7 +184,7 @@
         </a>
       </div>
       <div class="contact-images">
-        <img src="1_whiteDog.jpg" alt="White dog" />
+        <img src="9_GGBridge.jpg" alt="Golden Gate Bridge" />
         <img src="2_Fox.jpg" alt="Fox" />
         <img src="3_Teddy.jpg" alt="Teddy" />
       </div>
@@ -262,19 +278,19 @@
     </div>
   </section>
 
-  <!-- BOTTOM PHOTO ROW: Gigi, Kevin, Bench dry, Bench wet -->
+  <!-- BOTTOM PHOTO ROW -->
   <section class="section-gray">
     <div class="section-inner">
       <div class="photo-grid">
-        <img src="8_Gigi.png" alt="Gigi" />
-        <img src="10_Kevin.JPG" alt="Kevin" />
+        <img src="1_whiteDog.jpg" alt="White dog" />
+        <img src="10_Kevin.jpeg" alt="Kevin" onerror="this.src='10_Kevin.JPG'" />
         <img src="11_Benchdry.png" alt="Bench dry" />
         <img src="12_BenchWet.png" alt="Bench wet" />
       </div>
     </div>
   </section>
 
-  <!-- CONTACT BOTTOM — 3 bigger images -->
+  <!-- CONTACT BOTTOM -->
   <div class="contact-bar align-right" id="contact">
     <div class="contact-bar-inner">
       <div class="contact-info">
@@ -294,7 +310,7 @@
       <div class="contact-images">
         <img src="5_RosieandOlive.jpg" alt="Rosie and Olive" />
         <img src="7_Kim.png" alt="Kim" />
-        <img src="9_GGBridge.jpg" alt="Golden Gate Bridge" />
+        <img src="8_Gigi.png" alt="Gigi" />
       </div>
     </div>
   </div>
@@ -302,6 +318,20 @@
   <footer>
     <p>&copy; 2026 Rita's Pet Care Services · San Francisco, CA</p>
   </footer>
+
+  <script>
+    // Smooth scroll with header offset
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          const offset = document.querySelector('header').offsetHeight + 16;
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
