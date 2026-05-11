@@ -40,17 +40,26 @@
     /* HEADER */
     header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
     .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 4vw; }
-    header img.logo { height: 200px; width: auto; display: block; }
+    header img.logo { height: 260px; width: auto; display: block; }
+
+    nav { display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem; }
+    .nav-top { display: flex; align-items: center; gap: 0.5rem; }
+    .instagram-link { display: flex; align-items: center; gap: 0.4rem; color: var(--heading); text-decoration: none; font-size: 0.82rem; font-family: 'Montserrat', sans-serif; font-weight: 700; transition: color 0.2s; }
+    .instagram-link:hover { color: #c13584; }
+    .instagram-link svg { width: 22px; height: 22px; flex-shrink: 0; }
+
     nav ul { list-style: none; display: flex; align-items: center; }
     nav ul li a { display: block; padding: 0.6rem 1.1rem; color: var(--heading); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; font-family: 'Montserrat', sans-serif; border-radius: 4px; transition: background 0.2s, color 0.2s; }
     nav ul li a:hover { background: var(--sky); color: #fff; }
     nav ul li a.contact-link { color: var(--heading); border-radius: 6px; margin-left: 0.5rem; padding: 0.6rem 1.2rem; }
     nav ul li a.contact-link:hover { background: var(--sky); color: #fff; }
+
     .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
     .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--heading); margin: 5px 0; border-radius: 2px; }
 
     @media (max-width: 680px) {
-      header img.logo { height: 100px; }
+      header img.logo { height: 110px; }
+      nav { align-items: flex-end; }
       .menu-toggle { display: block; }
       nav ul { flex-direction: column; display: none; padding: 0.5rem 0; border-top: 1px solid var(--border); }
       nav ul.open { display: flex; }
@@ -114,6 +123,9 @@
     .photo-wide img { width: 100%; max-height: 420px; object-fit: cover; border-radius: 12px; display: block; margin: 2rem 0; }
 
     footer { text-align: center; padding: 1.5rem 1rem; font-size: 0.85rem; color: #999; border-top: 1px solid var(--border); background: #fff; }
+    .footer-ig { display: inline-flex; align-items: center; gap: 0.3rem; color: #999; text-decoration: none; margin-left: 0.75rem; font-weight: 600; transition: color 0.2s; }
+    .footer-ig:hover { color: #c13584; }
+    .footer-ig svg { width: 16px; height: 16px; }
   </style>
 </head>
 <body>
@@ -126,6 +138,16 @@
         <span></span><span></span><span></span>
       </button>
       <nav>
+        <div class="nav-top">
+          <a class="instagram-link" href="https://www.instagram.com/ritaspetssf/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            @ritaspetssf
+          </a>
+        </div>
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services & Rates</a></li>
@@ -283,7 +305,16 @@
   </div>
 
   <footer>
-    <p>&copy; 2026 Rita's Pet Care Services · San Francisco, CA</p>
+    <p>&copy; 2026 Rita's Pet Care Services · San Francisco, CA
+      <a class="footer-ig" href="https://www.instagram.com/ritaspetssf/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        @ritaspetssf
+      </a>
+    </p>
   </footer>
 
 </body>
