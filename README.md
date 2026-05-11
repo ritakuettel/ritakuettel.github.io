@@ -1,1 +1,0 @@
-# ritakuettel.github.io
