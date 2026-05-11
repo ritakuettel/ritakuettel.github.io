@@ -75,8 +75,8 @@
     .ig-link { display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.5rem; color: rgba(255,255,255,0.75) !important; font-size: 0.9rem; }
     .ig-link:hover { color: #fff !important; }
     .ig-link svg { width: 18px; height: 18px; flex-shrink: 0; }
-    .contact-images { display: flex; align-items: center; justify-content: space-evenly; flex: 1; gap: 1rem; }
-    .contact-images img { height: 140px; width: 140px; object-fit: cover; border-radius: 10px; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.3); transition: transform 0.2s, border-color 0.2s; }
+    .contact-images { display: flex; align-items: center; justify-content: space-evenly; flex: 1; gap: 1.5rem; }
+    .contact-images img { height: 170px; width: 170px; object-fit: cover; border-radius: 10px; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.3); transition: transform 0.2s, border-color 0.2s; }
     .contact-images img:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.8); }
 
     /* SECTIONS */
@@ -98,31 +98,31 @@
     /* BASE TABLE */
     .table-wrap { overflow-x: auto; margin: 0.75rem 0 1rem; border-radius: 10px; border: 1px solid var(--border); }
     table { width: 100%; border-collapse: collapse; font-size: 0.97rem; min-width: 380px; }
-    thead th { padding: 0.75rem 1rem; text-align: left; font-weight: 700; border-bottom: 2px solid rgba(0,0,0,0.12); font-size: 0.85rem; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.03em; color: #2b2b2b; }
-    tbody td { padding: 0.7rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.07); color: var(--text); }
+    thead th { padding: 0.75rem 1rem; text-align: left; font-weight: 700; border-bottom: 2px solid rgba(0,0,0,0.1); font-size: 0.85rem; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.03em; color: #2b2b2b; }
+    tbody td { padding: 0.7rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); color: var(--text); }
     tbody td:first-child { color: var(--text-dark); }
     tbody td:nth-child(2) { color: #3a3a3a; font-weight: 700; font-size: 1.05rem; }
     tbody tr:last-child td { border-bottom: none; }
 
-    /* BLUE — Overnight (pastel sky blue) */
+    /* BLUE — Overnight: pastel header, very light rows */
     .table-blue thead tr { background: #c8e8f7; }
     .table-blue tbody tr:nth-child(odd)  { background: #fff; }
-    .table-blue tbody tr:nth-child(even) { background: #c8e8f7; }
+    .table-blue tbody tr:nth-child(even) { background: #edf6fc; }
 
-    /* GREEN — Drop-In (pastel green) */
+    /* GREEN — Drop-In: pastel header, very light rows */
     .table-green thead tr { background: #c8eed9; }
     .table-green tbody tr:nth-child(odd)  { background: #fff; }
-    .table-green tbody tr:nth-child(even) { background: #c8eed9; }
+    .table-green tbody tr:nth-child(even) { background: #edf7f1; }
 
-    /* ORANGE — Private Walks (pastel orange) */
+    /* ORANGE — Private Walks: pastel header, very light rows */
     .table-orange thead tr { background: #fdd9c0; }
     .table-orange tbody tr:nth-child(odd)  { background: #fff; }
-    .table-orange tbody tr:nth-child(even) { background: #fdd9c0; }
+    .table-orange tbody tr:nth-child(even) { background: #fef3ec; }
 
-    /* YELLOW — Group Walks (pastel yellow) */
+    /* YELLOW — Group Walks: pastel header, very light rows */
     .table-yellow thead tr { background: #fdf3c0; }
     .table-yellow tbody tr:nth-child(odd)  { background: #fff; }
-    .table-yellow tbody tr:nth-child(even) { background: #fdf3c0; }
+    .table-yellow tbody tr:nth-child(even) { background: #fefce8; }
 
     .photo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0; }
     .photo-grid img { height: 210px; width: 210px; object-fit: cover; border-radius: 10px; display: block; transition: transform 0.3s, box-shadow 0.3s; }
@@ -150,7 +150,7 @@
     </div>
   </header>
 
-  <!-- CONTACT TOP -->
+  <!-- CONTACT TOP — 3 bigger images -->
   <div class="contact-bar align-left" id="contact-top">
     <div class="contact-bar-inner">
       <div class="contact-info">
@@ -171,7 +171,6 @@
         <img src="1_whiteDog.jpg" alt="White dog" />
         <img src="2_Fox.jpg" alt="Fox" />
         <img src="3_Teddy.jpg" alt="Teddy" />
-        <img src="9_GGBridge.jpg" alt="Golden Gate Bridge" />
       </div>
     </div>
   </div>
@@ -189,12 +188,6 @@
         <img src="5_RosieandOlive.jpg" alt="Rosie and Olive" />
         <img src="6_Rosie.png" alt="Rosie" />
         <img src="7_Kim.png" alt="Kim" />
-      </div>
-      <div class="photo-grid">
-        <img src="8_Gigi.png" alt="Gigi" />
-        <img src="10_Kevin.JPG" alt="Kevin" />
-        <img src="11_Benchdry.png" alt="Bench dry" />
-        <img src="12_BenchWet.png" alt="Bench wet" />
       </div>
     </div>
   </section>
@@ -269,7 +262,7 @@
     </div>
   </section>
 
-  <!-- EXTRA PHOTOS: GRAY -->
+  <!-- BOTTOM PHOTO ROW: Gigi, Kevin, Bench dry, Bench wet -->
   <section class="section-gray">
     <div class="section-inner">
       <div class="photo-grid">
@@ -281,7 +274,7 @@
     </div>
   </section>
 
-  <!-- CONTACT BOTTOM -->
+  <!-- CONTACT BOTTOM — 3 bigger images -->
   <div class="contact-bar align-right" id="contact">
     <div class="contact-bar-inner">
       <div class="contact-info">
@@ -301,7 +294,7 @@
       <div class="contact-images">
         <img src="5_RosieandOlive.jpg" alt="Rosie and Olive" />
         <img src="7_Kim.png" alt="Kim" />
-        <img src="8_Gigi.png" alt="Gigi" />
+        <img src="9_GGBridge.jpg" alt="Golden Gate Bridge" />
       </div>
     </div>
   </div>
