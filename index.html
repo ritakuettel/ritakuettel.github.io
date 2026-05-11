@@ -22,12 +22,11 @@
       --bg: #fdf6f0;
       --card-bg: #ffffff;
       --nav-bg: #5aa8d0;
-      --nav-hover: #4090b8;
+      --nav-hover: rgba(255,255,255,0.2);
       --heading: #2b2b2b;
       --text: #4a4a4a;
       --text-dark: #2b2b2b;
       --sky: #5aa8d0;
-      --sky-light: #e8f4fb;
       --coral: #e8624a;
       --border: #e0e0e0;
       --row-alt: #f5f5f5;
@@ -40,12 +39,21 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-weight: 400; }
-    header { background: #fff; border-bottom: 1px solid var(--border); text-align: center; padding: 2rem 1rem 1.5rem; }
-    header img.logo { max-width: 200px; height: auto; display: block; margin: 0 auto; }
+
     nav { background: var(--nav-bg); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
     nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
     nav ul li a { display: block; padding: 0.85rem 1.6rem; color: #fff; text-decoration: none; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; transition: background 0.2s; font-family: 'Montserrat', sans-serif; }
     nav ul li a:hover { background: var(--nav-hover); }
+
+    header { background: #fff; border-bottom: 1px solid var(--border); text-align: center; padding: 2rem 1rem 1.5rem; }
+    header img.logo { max-width: 200px; height: auto; display: block; margin: 0 auto; }
+
+    .contact-bar { background: var(--contact-bg); color: #fff; text-align: center; padding: 1.25rem 1rem; }
+    .contact-bar p { color: rgba(255,255,255,0.88); margin: 0.2rem 0; font-size: 1rem; }
+    .contact-bar a { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    .contact-bar a:hover { color: #cccccc; }
+    .contact-bar h2 { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 0.6rem; letter-spacing: -0.01em; }
+
     main { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
     .card { background: var(--card-bg); border-radius: 16px; padding: 2.5rem 2rem; margin-bottom: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid var(--border); }
     h2 { font-family: 'Montserrat', sans-serif; font-size: 1.9rem; font-weight: 800; color: var(--heading); margin-bottom: 1.25rem; text-align: center; letter-spacing: -0.02em; }
@@ -70,12 +78,7 @@
     .photo-grid img:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
     .photo-wide { margin: 1.5rem 0; }
     .photo-wide img { width: 100%; max-height: 380px; object-fit: cover; border-radius: 12px; display: block; }
-    .contact-box { background: var(--contact-bg); color: #fff; border-radius: 16px; padding: 2.5rem 2rem; text-align: center; }
-    .contact-box h2 { color: #fff; }
-    .contact-box p { color: rgba(255,255,255,0.88); margin-bottom: 0.5rem; font-size: 1.05rem; }
-    .contact-box a { color: #fff; font-size: 1.1rem; text-decoration: underline; }
-    .contact-box a:hover { color: #cccccc; }
-    footer { text-align: center; padding: 1.5rem 1rem; font-size: 0.85rem; color: #999; border-top: 1px solid var(--border); background: #fff; margin-top: 2rem; }
+    footer { text-align: center; padding: 1.5rem 1rem; font-size: 0.85rem; color: #999; border-top: 1px solid var(--border); background: #fff; }
     @media (max-width: 600px) {
       h2 { font-size: 1.5rem; }
       nav ul li a { padding: 0.7rem 1rem; font-size: 0.78rem; }
@@ -85,9 +88,8 @@
   </style>
 </head>
 <body>
-  <header>
-    <img class="logo" src="RitasPetsLogo.png" alt="Rita's Pets Logo" />
-  </header>
+
+  <!-- NAV FIRST -->
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
@@ -95,6 +97,20 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+
+  <!-- LOGO -->
+  <header>
+    <img class="logo" src="RitasPetsLogo.png" alt="Rita's Pets Logo" />
+  </header>
+
+  <!-- CONTACT TOP -->
+  <div class="contact-bar" id="contact-top">
+    <h2>Contact Me</h2>
+    <p>Ready to give your pet the care they deserve?</p>
+    <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetcarelove@gmail.com">ritaspetcarelove@gmail.com</a></p>
+    <p><strong style="color:#fff;">Phone:</strong> <a href="tel:+14155095039">(415) 509-5039</a></p>
+  </div>
+
   <main>
 
     <section id="about">
@@ -175,18 +191,19 @@
       </div>
     </section>
 
-    <section id="contact">
-      <div class="contact-box">
-        <h2>Contact Me</h2>
-        <p>Ready to give your pet the care they deserve?</p>
-        <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetcarelove@gmail.com">ritaspetcarelove@gmail.com</a></p>
-        <p><strong style="color:#fff;">Phone:</strong> <a href="tel:+14155095039">(415) 509-5039</a></p>
-      </div>
-    </section>
-
   </main>
+
+  <!-- CONTACT BOTTOM -->
+  <div class="contact-bar" id="contact">
+    <h2>Contact Me</h2>
+    <p>Ready to give your pet the care they deserve?</p>
+    <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetcarelove@gmail.com">ritaspetcarelove@gmail.com</a></p>
+    <p><strong style="color:#fff;">Phone:</strong> <a href="tel:+14155095039">(415) 509-5039</a></p>
+  </div>
+
   <footer>
     <p>&copy; 2025 Rita's Pet Care Services · San Francisco, CA</p>
   </footer>
+
 </body>
 </html>
