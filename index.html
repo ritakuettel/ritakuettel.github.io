@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rita's Pets | San Francisco Pet Sitting</title>
+  <title>Rita's Pet Care Services | San Francisco Pet Sitting</title>
   <meta name="description" content="Professional dog walker serving San Francisco. Private & group walks, drop-in visits, and pet sitting." />
-  <meta property="og:title" content="Rita's Pets" />
+  <meta property="og:title" content="Rita's Pet Care Services" />
   <meta property="og:description" content="Professional dog walker serving San Francisco." />
   <meta property="og:image" content="RitasPetsLogo.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ritakuettel.github.io" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rita's Pets" />
+  <meta name="twitter:title" content="Rita's Pet Care Services" />
   <meta name="twitter:description" content="Professional dog walker serving San Francisco" />
   <meta name="twitter:image" content="RitasPetsLogo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,21 +27,37 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Source Sans 3', sans-serif; color: var(--text); line-height: 1.7; font-weight: 400; }
     html { scroll-behavior: smooth; }
+
+    /* HEADER */
     header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
     .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 4vw; }
     header img.logo { height: 260px; width: auto; display: block; }
+
+    /* NAV */
     nav ul { list-style: none; display: flex; align-items: center; }
-    nav ul li a { display: block; padding: 0.6rem 1.1rem; color: var(--heading); text-decoration: none; font-size: 0.9rem; font-weight: 700; font-family: 'Montserrat', sans-serif; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 4px; transition: background 0.2s, color 0.2s, border-color 0.2s; }
-    
+    nav ul li { position: relative; }
+    nav ul li a { display: block; padding: 0.6rem 1.1rem; color: var(--heading); text-decoration: none; font-size: 0.9rem; font-weight: 700; font-family: 'Montserrat', sans-serif; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 4px; transition: background 0.2s, color 0.2s; white-space: nowrap; }
     nav ul li a:hover { background: var(--sky); color: #fff; }
     nav ul li a.contact-link { color: var(--heading); border-radius: 6px; margin-left: 0.5rem; }
     nav ul li a.contact-link:hover { background: var(--sky); color: #fff; }
+
+    /* DROPDOWN */
+    .has-dropdown > a { display: flex; align-items: center; gap: 0.3rem; }
+    .has-dropdown > a::after { content: '▾'; font-size: 0.75rem; }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); min-width: 240px; z-index: 200; overflow: hidden; }
+    .dropdown a { padding: 0.65rem 1.1rem; font-size: 0.82rem; letter-spacing: 0.04em; border-radius: 0; color: var(--heading); display: block; border-bottom: 1px solid var(--border); }
+    .dropdown a:last-child { border-bottom: none; }
+    .dropdown a:hover { background: var(--sky); color: #fff; }
+    .has-dropdown:hover .dropdown,
+    .has-dropdown:focus-within .dropdown { display: block; }
+
     .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
     .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--heading); margin: 5px 0; border-radius: 2px; }
+
     @media (max-width: 680px) {
       header img.logo { height: 110px; }
       .menu-toggle { display: block; }
-      nav ul { flex-direction: column; display: none; padding: 0.5rem 0; border-top: 1px solid var(--border); }
+      nav ul { flex-direction: column; display: none; padding: 0.5rem 0; border-top: 1px solid var(--border); width: 100%; }
       nav ul.open { display: flex; }
       nav ul li { width: 100%; }
       nav ul li a { padding: 0.75rem 1.5rem; border-radius: 0; }
@@ -50,7 +66,14 @@
       :root { --pad: 2rem 5vw; }
       .contact-bar-inner { flex-direction: column !important; }
       .contact-images { margin-top: 1rem; }
+      .dropdown { position: static; box-shadow: none; border: none; border-radius: 0; background: #f8f8f8; }
+      .dropdown a { padding-left: 2.5rem; font-size: 0.8rem; }
+      .has-dropdown .dropdown { display: none; }
+      .has-dropdown.open .dropdown { display: block; }
+      .has-dropdown > a::after { margin-left: auto; }
     }
+
+    /* CONTACT BAR */
     .contact-bar { background: var(--contact-bg); color: #fff; padding: 2rem 4vw; }
     .contact-bar-inner { display: flex; align-items: center; gap: 3rem; width: 100%; }
     .contact-bar.align-left  .contact-bar-inner { flex-direction: row; }
@@ -68,10 +91,13 @@
     .contact-images { display: flex; align-items: center; justify-content: space-evenly; flex: 1; gap: 1.5rem; }
     .contact-images img { height: 170px; width: 170px; object-fit: cover; border-radius: 10px; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.3); transition: transform 0.2s, border-color 0.2s; }
     .contact-images img:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.8); }
+
+    /* SECTIONS */
     .section-white { background: #ffffff; padding: var(--pad); }
     .section-gray  { background: #f2f2f2; padding: var(--pad); }
     .section-inner { max-width: 1100px; margin: 0 auto; }
     .services-header { background: #ffffff; padding: 1rem 6vw 0; }
+
     h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--heading); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
     h3 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: var(--heading); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.02em; }
     p { margin-bottom: 1rem; font-size: 1.05rem; color: var(--text); }
@@ -80,6 +106,8 @@
     strong { font-weight: 600; color: var(--text-dark); }
     em { font-style: italic; color: #777; }
     .note { background: var(--note-bg); border-left: 4px solid var(--note-border); padding: 0.85rem 1rem; border-radius: 0 6px 6px 0; margin: 0.75rem 0 1.25rem; font-size: 0.97rem; font-style: italic; }
+
+    /* TABLES */
     .table-wrap { overflow-x: auto; margin: 0.75rem 0 1rem; border-radius: 10px; border: 1px solid var(--border); }
     table { width: 100%; border-collapse: collapse; font-size: 0.97rem; min-width: 380px; }
     thead th { padding: 0.75rem 1rem; text-align: left; font-weight: 700; border-bottom: 2px solid rgba(0,0,0,0.1); font-size: 0.85rem; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.03em; color: #2b2b2b; }
@@ -99,9 +127,12 @@
     .table-yellow thead tr { background: #fdf3c0; }
     .table-yellow tbody tr:nth-child(odd)  { background: #fff; }
     .table-yellow tbody tr:nth-child(even) { background: #fefce8; }
+
+    /* PHOTOS */
     .photo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0; }
     .photo-grid img { height: 210px; width: 210px; object-fit: cover; border-radius: 10px; display: block; transition: transform 0.3s, box-shadow 0.3s; }
     .photo-grid img:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+
     footer { text-align: center; padding: 1.5rem 1rem; font-size: 0.85rem; color: #999; border-top: 1px solid var(--border); background: #fff; }
   </style>
 </head>
@@ -110,13 +141,21 @@
   <header>
     <div class="header-inner">
       <img class="logo" src="RitasPetsLogo.png" alt="Rita's Pets Logo" />
-      <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu">
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
       <nav>
-        <ul>
+        <ul id="main-nav">
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
+          <li class="has-dropdown">
+            <a href="#services">Services ▾</a>
+            <ul class="dropdown">
+              <li><a href="#overnight">Pet Sitting</a></li>
+              <li><a href="#dropin">Drop-Ins</a></li>
+              <li><a href="#private">Private Dog Walks</a></li>
+              <li><a href="#group">Group Dog Walks</a></li>
+            </ul>
+          </li>
           <li><a href="#contact" class="contact-link">Contact</a></li>
         </ul>
       </nav>
@@ -150,13 +189,7 @@
   <section id="about" class="section-white">
     <div class="section-inner">
       <h2>About Me</h2>
-      <p>My name is Rita, and I am a professional dog walker and pet sitter living and working in San Francisco.
-
-I’ve been an animal lover since I was a little girl, and I grew up always having cats in my life. Caring for animals comes naturally to me, and I truly love getting to know each pet’s unique personality and routine.
-
-I currently have two cats of my own, Olive and Rosie, so I understand how important it is to trust someone caring for your furry family members.
-
-I offer pet sitting in your home, drop-in visits, private walks, and neighborhood group walks. Photo updates are always available upon request, and I’ll care for your pets as if they were my own.</p>
+      <p>Nice to meet you! I'm Rita, a professional pet sitter and dog walker living and working in San Francisco. I grew up in Switzerland with a love for animals, and now I make my living caring for pets here in the city.</p>
       <p>I have two cats of my own, Olive and Rosie, so I know exactly how it feels to trust someone else with your furry family. Follow their adventures on Instagram: <a href="https://www.instagram.com/oliveandrosiesf/" target="_blank" rel="noopener">@oliveandrosiesf</a>.</p>
       <p>I offer <strong>pet sitting at your house, drop-ins, private walks, and neighbourhood group walks.</strong> I can send photo updates during my services upon request. I'll treat your pet like it would be my own.</p>
       <div class="note"><strong>Please read:</strong> My rates reflect the cost of living in San Francisco, allowing me to continue providing reliable, professional care for your pets in the city. Weekend and holiday surcharges apply.</div>
@@ -175,7 +208,7 @@ I offer pet sitting in your home, drop-in visits, private walks, and neighborhoo
     </div>
   </div>
 
-  <section class="section-gray">
+  <section class="section-gray" id="overnight">
     <div class="section-inner">
       <h3>In-Home Overnight Pet Sitting (Cats &amp; Dogs)</h3>
       <p>Personalized, in-home care that gives your pets comfort, consistency, and companionship while you're away. Care includes evening and morning feedings, potty breaks, and full overnight supervision.</p>
@@ -191,7 +224,7 @@ I offer pet sitting in your home, drop-in visits, private walks, and neighborhoo
     </div>
   </section>
 
-  <section class="section-white">
+  <section class="section-white" id="dropin">
     <div class="section-inner">
       <h3>Drop-In Visits (Cats &amp; Dogs)</h3>
       <p>Each visit is at least 30 minutes and includes feeding, potty or litter care, playtime, and supervision.</p>
@@ -207,21 +240,21 @@ I offer pet sitting in your home, drop-in visits, private walks, and neighborhoo
     </div>
   </section>
 
-  <section class="section-gray">
+  <section class="section-gray" id="private">
     <div class="section-inner">
       <h3>Dog Walking – Private Walks</h3>
       <p>1-on-1 walks for dogs who are anxious, reactive, or need extra attention. Discounted rates for two dogs from the same household.</p>
       <div class="note"><strong>Please read:</strong> Rates reflect the time, attention, and professional supervision provided during every walk.</div>
       <div class="table-wrap"><table class="table-orange"><thead><tr><th>Duration</th><th>1 Dog</th><th>2 Dogs</th></tr></thead><tbody>
         <tr><td>30 min</td><td>$35</td><td>$45</td></tr>
-        <tr><td>60 min</td><td>$50</td><td>$70</td></tr>
+        <tr><td>60 min</td><td>$60</td><td>$80</td></tr>
         <tr><td>Weekend Surcharge</td><td>+$10</td><td>Sat &amp; Sun</td></tr>
         <tr><td>Holiday Surcharge</td><td>+$20</td><td>Thanksgiving, Dec 25, Jan 1, etc.</td></tr>
       </tbody></table></div>
     </div>
   </section>
 
-  <section class="section-white">
+  <section class="section-white" id="group">
     <div class="section-inner">
       <h3>Dog Walking – Neighbourhood Group Walks</h3>
       <p>Social walks for dogs who love to explore and make friends. <strong>Collaborate with a neighbor — your walk will be charged at the group walk rate.</strong></p>
@@ -270,17 +303,36 @@ I offer pet sitting in your home, drop-in visits, private walks, and neighborhoo
   </div>
 
   <footer>
-    <p>&copy; 2026 Rita's Pets · San Francisco, CA</p>
+    <p>&copy; 2026 Rita's Pet Care Services · San Francisco, CA</p>
   </footer>
 
   <script>
+    // Smooth scroll with header offset
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(a.getAttribute('href'));
+        const href = a.getAttribute('href');
+        const target = document.querySelector(href);
         if (target) {
+          e.preventDefault();
           const offset = document.querySelector('header').offsetHeight + 16;
           window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+        }
+        // Close mobile nav on click
+        document.getElementById('main-nav').classList.remove('open');
+      });
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('open');
+    }
+
+    // Mobile dropdown toggle
+    document.querySelectorAll('.has-dropdown > a').forEach(a => {
+      a.addEventListener('click', e => {
+        if (window.innerWidth <= 680) {
+          e.preventDefault();
+          a.closest('.has-dropdown').classList.toggle('open');
         }
       });
     });
