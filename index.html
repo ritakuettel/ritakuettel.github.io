@@ -31,7 +31,7 @@
       --thead-border: #cccccc;
       --note-bg: #fef0ee;
       --note-border: #e8624a;
-      --contact-bg: #3a3a3a;
+      --contact-bg: #5a5a5a;
       --pad: 3.5rem 6vw;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -44,8 +44,8 @@
     nav ul { list-style: none; display: flex; align-items: center; }
     nav ul li a { display: block; padding: 0.6rem 1.1rem; color: var(--heading); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; font-family: 'Montserrat', sans-serif; border-radius: 4px; transition: background 0.2s, color 0.2s; }
     nav ul li a:hover { background: var(--sky); color: #fff; }
-    nav ul li a.contact-link { background: var(--sky); color: #fff; border-radius: 6px; margin-left: 0.5rem; padding: 0.6rem 1.2rem; }
-    nav ul li a.contact-link:hover { background: var(--sky-dark); }
+    nav ul li a.contact-link { color: var(--heading); border-radius: 6px; margin-left: 0.5rem; padding: 0.6rem 1.2rem; }
+    nav ul li a.contact-link:hover { background: var(--sky); color: #fff; }
     .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
     .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--heading); margin: 5px 0; border-radius: 2px; }
 
@@ -63,27 +63,50 @@
 
     /* CONTACT BAR */
     .contact-bar { background: var(--contact-bg); color: #fff; padding: 2rem 4vw; }
-    .contact-bar.align-right { text-align: right; }
     .contact-bar.align-left  { text-align: left; }
+    .contact-bar.align-right { text-align: right; }
     .contact-bar h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 0.6rem; }
     .contact-bar p { color: rgba(255,255,255,0.88); margin: 0.3rem 0; font-size: 1rem; }
-    .contact-bar a { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
-    .contact-bar a:hover { color: #ccc; }
+    .contact-bar a { color: #f0c080; font-weight: 600; text-decoration: none; transition: color 0.2s; }
+    .contact-bar a:hover { color: #fff; }
+
+    /* CONTACT IMAGE STRIP */
+    .contact-images {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+      overflow-x: auto;
+      padding-bottom: 0.25rem;
+    }
+    .contact-bar.align-right .contact-images { justify-content: flex-end; }
+    .contact-bar.align-left  .contact-images { justify-content: flex-start; }
+    .contact-images img {
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.25);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .contact-images img:hover { transform: scale(1.06); border-color: rgba(255,255,255,0.7); }
 
     /* SECTIONS */
     .section-white { background: #ffffff; padding: var(--pad); }
     .section-gray  { background: #f2f2f2; padding: var(--pad); }
     .section-inner { max-width: 1100px; margin: 0 auto; }
 
-    /* SERVICES HEADING — same style as About Me */
     .services-header { background: #ffffff; padding: var(--pad); padding-bottom: 0; }
     .services-header .section-inner { border-bottom: none; }
 
     h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--heading); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
     h3 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: var(--heading); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.02em; }
     p { margin-bottom: 1rem; font-size: 1.05rem; color: var(--text); }
-    a { color: var(--sky); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* LINKS — no underline, different color, mouseover */
+    a { color: var(--sky); font-weight: 600; text-decoration: none; transition: color 0.2s; }
     a:hover { color: var(--coral); }
+
     strong { font-weight: 600; color: var(--text-dark); }
     em { font-style: italic; color: #777; }
 
@@ -127,12 +150,21 @@
     </div>
   </header>
 
-  <!-- CONTACT TOP — right aligned -->
-  <div class="contact-bar align-right" id="contact-top">
+  <!-- CONTACT TOP — left aligned -->
+  <div class="contact-bar align-left" id="contact-top">
     <h2>Contact Me</h2>
     <p>Ready to give your pet the care they deserve?</p>
-    <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetcarelove@gmail.com">ritaspetcarelove@gmail.com</a></p>
+    <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetssf@gmail.com">ritaspetssf@gmail.com</a></p>
     <p><strong style="color:#fff;">Phone:</strong> <a href="tel:+14155095039">(415) 509-5039</a></p>
+    <div class="contact-images">
+      <img src="1_whiteDog.jpg" alt="White dog" />
+      <img src="3_Teddy.jpg" alt="Teddy" />
+      <img src="4_Olive.png" alt="Olive" />
+      <img src="6_Rosie.png" alt="Rosie" />
+      <img src="7_Kim.png" alt="Kim" />
+      <img src="8_Gigi.png" alt="Gigi" />
+      <img src="10_Kevin.JPG" alt="Kevin" />
+    </div>
   </div>
 
   <!-- ABOUT -->
@@ -152,7 +184,7 @@
     </div>
   </section>
 
-  <!-- SERVICES HEADING — white, same style as About Me -->
+  <!-- SERVICES HEADING -->
   <div class="services-header" id="services">
     <div class="section-inner">
       <h2>Services &amp; Rates</h2>
@@ -240,12 +272,21 @@
     </div>
   </section>
 
-  <!-- CONTACT BOTTOM — left aligned -->
-  <div class="contact-bar align-left" id="contact">
+  <!-- CONTACT BOTTOM — right aligned -->
+  <div class="contact-bar align-right" id="contact">
     <h2>Contact Me</h2>
     <p>Ready to give your pet the care they deserve?</p>
-    <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetcarelove@gmail.com">ritaspetcarelove@gmail.com</a></p>
+    <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetssf@gmail.com">ritaspetssf@gmail.com</a></p>
     <p><strong style="color:#fff;">Phone:</strong> <a href="tel:+14155095039">(415) 509-5039</a></p>
+    <div class="contact-images">
+      <img src="2_Fox.jpg" alt="Fox" />
+      <img src="5_RosieandOlive.jpg" alt="Rosie and Olive" />
+      <img src="8_Gigi.png" alt="Gigi" />
+      <img src="9_GGBridge.jpg" alt="Golden Gate Bridge" />
+      <img src="11_Benchdry.png" alt="Bench dry" />
+      <img src="12_BenchWet.png" alt="Bench wet" />
+      <img src="4_Olive.png" alt="Olive" />
+    </div>
   </div>
 
   <footer>
