@@ -7,68 +7,78 @@
   <meta name="description" content="Professional dog walker serving San Francisco. Private & group walks, drop-in visits, and pet sitting." />
   <meta property="og:title" content="Rita's Pet Care Services" />
   <meta property="og:description" content="Professional dog walker serving San Francisco. Private & group walks, drop-in visits, and pet sitting." />
-  <meta property="og:image" content="https://ritaspetservices.netlify.app/Rita_Logo.png" />
+  <meta property="og:image" content="https://ritaspetssf.netlify.app/Rita_Logo.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ritaspetservices.netlify.app" />
+  <meta property="og:url" content="https://ritakuettel.github.io" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rita's Pet Care Services" />
   <meta name="twitter:description" content="Professional dog walker serving San Francisco" />
-  <meta name="twitter:image" content="https://ritaspetservices.netlify.app/Rita_Logo.png" />
+  <meta name="twitter:image" content="https://ritaspetssf.netlify.app/Rita_Logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --cream: #fdf8f2;
-      --warm-white: #fff9f4;
-      --brown: #4a2f1a;
-      --brown-light: #7a5c3e;
-      --green: #3d6b4f;
-      --green-light: #5a8c6a;
-      --accent: #c97d3a;
-      --text: #2e1f0e;
-      --text-muted: #7a6655;
-      --border: #e8ddd2;
+      --bg: #f0f2f5;
+      --card-bg: #ffffff;
+      --nav-bg: #2d5fa6;
+      --nav-hover: #1e4a8a;
+      --heading: #2c3e5a;
+      --subheading: #2d5fa6;
+      --text: #4a5568;
+      --text-dark: #2c3e5a;
+      --blue: #2d9cdb;
+      --blue-light: #ebf5fb;
+      --border: #dde3ea;
+      --row-alt: #f0f7ff;
+      --note-bg: #eaf4fb;
+      --note-border: #2d9cdb;
+      --price-color: #2d9cdb;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Lato', sans-serif; background-color: var(--cream); color: var(--text); line-height: 1.7; font-weight: 300; }
-    header { background: var(--warm-white); border-bottom: 1px solid var(--border); text-align: center; padding: 2.5rem 1rem 2rem; }
-    header img.logo { max-width: 220px; height: auto; display: block; margin: 0 auto 1rem; }
-    nav { background: var(--green); position: sticky; top: 0; z-index: 100; }
+    body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-weight: 400; }
+    header { background: #fff; border-bottom: 1px solid var(--border); text-align: center; padding: 2rem 1rem 1.5rem; }
+    header img.logo { max-width: 200px; height: auto; display: block; margin: 0 auto; }
+    nav { background: var(--nav-bg); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
     nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
-    nav ul li a { display: block; padding: 0.85rem 1.4rem; color: #fff; text-decoration: none; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; transition: background 0.2s; }
-    nav ul li a:hover { background: var(--green-light); }
-    main { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
-    section { padding: 3.5rem 0 2rem; border-bottom: 1px solid var(--border); }
-    section:last-of-type { border-bottom: none; }
-    h2 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600; color: var(--brown); margin-bottom: 1.25rem; }
-    h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--green); margin: 2rem 0 0.75rem; }
-    p { margin-bottom: 1rem; font-size: 1.025rem; color: var(--text); }
-    a { color: var(--green); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-    a:hover { color: var(--accent); }
-    strong { font-weight: 700; color: var(--brown); }
-    em { color: var(--text-muted); font-style: italic; }
-    .note { background: #f5ede1; border-left: 4px solid var(--accent); padding: 0.9rem 1.1rem; border-radius: 0 6px 6px 0; margin: 1rem 0 1.5rem; font-size: 0.95rem; color: var(--brown-light); }
-    .table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; }
-    table { width: 100%; border-collapse: collapse; font-size: 0.97rem; min-width: 420px; }
-    thead tr { background: var(--green); color: #fff; }
-    thead th { padding: 0.75rem 1rem; text-align: left; font-weight: 700; letter-spacing: 0.03em; }
-    tbody tr:nth-child(even) { background: #f0ebe4; }
-    tbody tr:nth-child(odd) { background: #fff9f4; }
-    tbody td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); }
-    tbody td:first-child { font-weight: 700; color: var(--brown); }
-    .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; margin: 2rem 0; }
+    nav ul li a { display: block; padding: 0.85rem 1.6rem; color: #fff; text-decoration: none; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; transition: background 0.2s; }
+    nav ul li a:hover { background: var(--nav-hover); }
+    main { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .card { background: var(--card-bg); border-radius: 12px; padding: 2.5rem 2rem; margin-bottom: 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 600; color: var(--heading); margin-bottom: 1.25rem; text-align: center; }
+    h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin: 2rem 0 0.6rem; border-left: 4px solid var(--blue); padding-left: 0.75rem; }
+    p { margin-bottom: 1rem; font-size: 1rem; color: var(--text); }
+    a { color: var(--blue); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: var(--nav-bg); }
+    strong { font-weight: 600; color: var(--text-dark); }
+    .note { background: var(--note-bg); border-left: 4px solid var(--note-border); padding: 0.85rem 1rem; border-radius: 0 6px 6px 0; margin: 0.75rem 0 1.25rem; font-size: 0.95rem; color: var(--text); font-style: italic; }
+    .table-wrap { overflow-x: auto; margin: 0.75rem 0 1.25rem; border-radius: 8px; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.97rem; min-width: 380px; }
+    thead tr { background: var(--blue-light); }
+    thead th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; color: var(--heading); border-bottom: 2px solid var(--blue); font-size: 0.9rem; }
+    tbody tr:nth-child(even) { background: var(--row-alt); }
+    tbody tr:nth-child(odd) { background: #fff; }
+    tbody td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); color: var(--text); }
+    tbody td:first-child { color: var(--text-dark); font-weight: 400; }
+    tbody td:nth-child(2) { color: var(--price-color); font-weight: 600; font-size: 1.05rem; }
+    tbody tr:last-child td { border-bottom: none; }
+    .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; margin: 1.5rem 0; }
     .photo-grid img { width: 100%; height: 190px; object-fit: cover; border-radius: 8px; display: block; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .photo-grid img:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(74,47,26,0.18); }
-    .photo-wide { margin: 2rem 0; }
+    .photo-grid img:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .photo-wide { margin: 1.5rem 0; }
     .photo-wide img { width: 100%; max-height: 380px; object-fit: cover; border-radius: 10px; display: block; }
-    .contact-box { background: var(--green); color: #fff; border-radius: 12px; padding: 2.5rem 2rem; text-align: center; margin-top: 1.5rem; }
-    .contact-box h2 { color: #fff; margin-bottom: 0.5rem; }
-    .contact-box p { color: rgba(255,255,255,0.88); margin-bottom: 0.4rem; }
+    .contact-box { background: var(--nav-bg); color: #fff; border-radius: 12px; padding: 2.5rem 2rem; text-align: center; }
+    .contact-box h2 { color: #fff; }
+    .contact-box p { color: rgba(255,255,255,0.9); margin-bottom: 0.5rem; font-size: 1.05rem; }
     .contact-box a { color: #fff; font-size: 1.1rem; }
-    .contact-box a:hover { color: #ffd9a8; }
-    footer { text-align: center; padding: 1.5rem 1rem; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border); background: var(--warm-white); }
-    @media (max-width: 600px) { h2 { font-size: 1.6rem; } nav ul li a { padding: 0.7rem 0.9rem; font-size: 0.78rem; } .photo-grid { grid-template-columns: repeat(2, 1fr); } }
+    .contact-box a:hover { color: #a8d4f0; }
+    footer { text-align: center; padding: 1.5rem 1rem; font-size: 0.85rem; color: #888; border-top: 1px solid var(--border); background: #fff; margin-top: 2rem; }
+    @media (max-width: 600px) {
+      h2 { font-size: 1.5rem; }
+      nav ul li a { padding: 0.7rem 1rem; font-size: 0.8rem; }
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 1.5rem 1.25rem; }
+    }
   </style>
 </head>
 <body>
@@ -83,73 +93,85 @@
     </ul>
   </nav>
   <main>
+
     <section id="about">
-      <h2>About Me</h2>
-      <p>Nice to meet you! I'm Rita, a professional pet sitter and dog walker living and working in San Francisco. I grew up in Switzerland with a love for animals, and now I make my living caring for pets here in the city.</p>
-      <p>I have two cats of my own, Olive and Rosie, so I know exactly how it feels to trust someone else with your furry family. Follow their adventures on Instagram: <a href="https://www.instagram.com/oliveandrosiesf/" target="_blank" rel="noopener">@oliveandrosiesf</a>.</p>
-      <p>I offer <strong>pet sitting at your house, drop-ins, private walks, and neighbourhood group walks.</strong> I can send photo updates during my services upon request. I'll treat your pet like it would be my own.</p>
-      <div class="note"><strong>Please read:</strong> My rates reflect the cost of living in San Francisco, allowing me to continue providing reliable, professional care for your pets in the city. Weekend and holiday surcharges apply.</div>
-      <div class="photo-grid">
-        <img src="1_whiteDog.jpg" alt="White dog" />
-        <img src="2_Fox.jpg" alt="Fox" />
-        <img src="3_Teddy.jpg" alt="Teddy" />
-        <img src="4_Olive.png" alt="Olive" />
+      <div class="card">
+        <h2>About Me</h2>
+        <p>Nice to meet you! I'm Rita, a professional pet sitter and dog walker living and working in San Francisco. I grew up in Switzerland with a love for animals, and now I make my living caring for pets here in the city.</p>
+        <p>I have two cats of my own, Olive and Rosie, so I know exactly how it feels to trust someone else with your furry family. Follow their adventures on Instagram: <a href="https://www.instagram.com/oliveandrosiesf/" target="_blank" rel="noopener">@oliveandrosiesf</a>.</p>
+        <p>I offer <strong>pet sitting at your house, drop-ins, private walks, and neighbourhood group walks.</strong> I can send photo updates during my services upon request. I'll treat your pet like it would be my own.</p>
+        <div class="note"><strong>Please read:</strong> My rates reflect the cost of living in San Francisco, allowing me to continue providing reliable, professional care for your pets in the city. Weekend and holiday surcharges apply.</div>
+        <div class="photo-grid">
+          <img src="1_whiteDog.jpg" alt="White dog" />
+          <img src="2_Fox.jpg" alt="Fox" />
+          <img src="3_Teddy.jpg" alt="Teddy" />
+          <img src="4_Olive.png" alt="Olive" />
+        </div>
       </div>
     </section>
+
     <section id="services">
-      <h2>Services &amp; Rates</h2>
-      <h3>In-Home Overnight Pet Sitting (Cats &amp; Dogs)</h3>
-      <p>Personalized, in-home care that gives your pets comfort, consistency, and companionship while you're away. Care includes evening and morning feedings, potty breaks, and full overnight supervision.</p>
-      <div class="note"><strong>Please read:</strong> Cats and dogs are charged the same because every pet deserves the same level of attention, supervision, and professional care.</div>
-      <div class="table-wrap"><table><thead><tr><th>Service</th><th>Price/night</th><th>Notes</th></tr></thead><tbody>
-        <tr><td>1-2 Pets</td><td>$125</td><td>Evening through morning care</td></tr>
-        <tr><td>Additional Pet</td><td>+$25</td><td>Add for each extra pet</td></tr>
-        <tr><td>Special Needs</td><td>+$20</td><td>Special care &amp; medication*</td></tr>
-        <tr><td>Weekend Surcharge</td><td>+$15</td><td>Sat &amp; Sun (waived if Holiday)</td></tr>
-        <tr><td>Holiday Surcharge</td><td>+$25</td><td>Thanksgiving, Dec 25, Jan 1, etc.</td></tr>
-      </tbody></table></div>
-      <p><em>*I'm trained to administer insulin injections for diabetic pets.</em></p>
-      <h3>Drop-In Visits (Cats &amp; Dogs)</h3>
-      <p>Each visit is at least 30 minutes and includes feeding, potty or litter care, playtime, and supervision.</p>
-      <div class="note"><strong>Please read:</strong> Rates are the same for cats and dogs because all pets receive the same time, attention, and professional care.</div>
-      <div class="table-wrap"><table><thead><tr><th>Duration</th><th>1 Pet</th><th>2 Pets</th></tr></thead><tbody>
-        <tr><td>30 min</td><td>$30</td><td>$45</td></tr>
-        <tr><td>60 min</td><td>$50</td><td>$75</td></tr>
-        <tr><td>3 hours</td><td>$85</td><td>$100</td></tr>
-        <tr><td>Additional Pet</td><td>+$10</td><td>Each extra pet</td></tr>
-        <tr><td>Weekend Surcharge</td><td>+$15</td><td>Sat &amp; Sun per visit</td></tr>
-        <tr><td>Holiday Surcharge</td><td>+$25</td><td>Per visit</td></tr>
-      </tbody></table></div>
-      <h3>Dog Walking - Private Walks</h3>
-      <p>1-on-1 walks for dogs who are anxious, reactive, or need extra attention. Discounted rates for two dogs from the same household.</p>
-      <div class="note"><strong>Please read:</strong> Rates reflect the time, attention, and professional supervision provided during every walk.</div>
-      <div class="table-wrap"><table><thead><tr><th>Duration</th><th>1 Dog</th><th>2 Dogs</th></tr></thead><tbody>
-        <tr><td>30 min</td><td>$35</td><td>$45</td></tr>
-        <tr><td>60 min</td><td>$60</td><td>$80</td></tr>
-        <tr><td>Weekend Surcharge</td><td>+$10</td><td>Sat &amp; Sun</td></tr>
-        <tr><td>Holiday Surcharge</td><td>+$20</td><td>Thanksgiving, Dec 25, Jan 1, etc.</td></tr>
-      </tbody></table></div>
-      <h3>Dog Walking - Neighbourhood Group Walks</h3>
-      <p>Social walks for dogs who love to explore and make friends. <strong>Collaborate with a neighbor — your walk will be charged at the group walk rate.</strong></p>
-      <div class="note"><strong>Please read:</strong> Rates reflect the care, attention, and supervision needed to ensure a safe, enjoyable walk for each dog in the group.</div>
-      <div class="table-wrap"><table><thead><tr><th>Duration</th><th>1 Dog</th><th>Additional Dog (same household)</th></tr></thead><tbody>
-        <tr><td>60 min</td><td>$40</td><td>+$20</td></tr>
-        <tr><td>Weekend Surcharge</td><td>+$15</td><td>Sat &amp; Sun</td></tr>
-        <tr><td>Holiday Surcharge</td><td>+$20</td><td>Thanksgiving, Dec 25, Jan 1, etc.</td></tr>
-      </tbody></table></div>
-      <div class="photo-grid">
-        <img src="5_RosieandOlive.jpg" alt="Rosie and Olive" />
-        <img src="6_Rosie.png" alt="Rosie" />
-        <img src="7_Kim.png" alt="Kim" />
-        <img src="8_Gigi.png" alt="Gigi" />
-      </div>
-      <div class="photo-wide"><img src="9_GGBridge.jpg" alt="Rita with dogs at Golden Gate Bridge" /></div>
-      <div class="photo-grid">
-        <img src="10_Kevin.JPG" alt="Kevin" />
-        <img src="11_Benchdry.png" alt="Bench dry" />
-        <img src="12_BenchWet.png" alt="Bench wet" />
+      <div class="card">
+        <h2>Services &amp; Rates</h2>
+
+        <h3>In-Home Overnight Pet Sitting (Cats &amp; Dogs)</h3>
+        <p>Personalized, in-home care that gives your pets comfort, consistency, and companionship while you're away. Care includes evening and morning feedings, potty breaks, and full overnight supervision.</p>
+        <div class="note"><strong>Please read:</strong> Cats and dogs are charged the same because every pet deserves the same level of attention, supervision, and professional care.</div>
+        <div class="table-wrap"><table><thead><tr><th>Service</th><th>Price/night</th><th>Notes</th></tr></thead><tbody>
+          <tr><td>1–2 Pets</td><td>$125</td><td>Evening through morning care</td></tr>
+          <tr><td>Additional Pet</td><td>+$25</td><td>Add for each extra pet</td></tr>
+          <tr><td>Special Needs</td><td>+$20</td><td>Special care &amp; medication*</td></tr>
+          <tr><td>Weekend Surcharge</td><td>+$15</td><td>Sat &amp; Sun (waived if Holiday)</td></tr>
+          <tr><td>Holiday Surcharge</td><td>+$25</td><td>Thanksgiving, Dec 25, Jan 1, etc.</td></tr>
+        </tbody></table></div>
+        <p><em>*I'm trained to administer insulin injections for diabetic pets.</em></p>
+
+        <h3>Drop-In Visits (Cats &amp; Dogs)</h3>
+        <p>Each visit is at least 30 minutes and includes feeding, potty or litter care, playtime, and supervision.</p>
+        <div class="note"><strong>Please read:</strong> Rates are the same for cats and dogs because all pets receive the same time, attention, and professional care.</div>
+        <div class="table-wrap"><table><thead><tr><th>Duration</th><th>1 Pet</th><th>2 Pets</th></tr></thead><tbody>
+          <tr><td>30 min</td><td>$30</td><td>$45</td></tr>
+          <tr><td>60 min</td><td>$50</td><td>$75</td></tr>
+          <tr><td>3 hours</td><td>$85</td><td>$100</td></tr>
+          <tr><td>Additional Pet</td><td>+$10</td><td>Each extra pet</td></tr>
+          <tr><td>Weekend Surcharge</td><td>+$15</td><td>Sat &amp; Sun per visit</td></tr>
+          <tr><td>Holiday Surcharge</td><td>+$25</td><td>Per visit</td></tr>
+        </tbody></table></div>
+
+        <h3>Dog Walking – Private Walks</h3>
+        <p>1-on-1 walks for dogs who are anxious, reactive, or need extra attention. Discounted rates for two dogs from the same household.</p>
+        <div class="note"><strong>Please read:</strong> Rates reflect the time, attention, and professional supervision provided during every walk.</div>
+        <div class="table-wrap"><table><thead><tr><th>Duration</th><th>1 Dog</th><th>2 Dogs</th></tr></thead><tbody>
+          <tr><td>30 min</td><td>$35</td><td>$45</td></tr>
+          <tr><td>60 min</td><td>$60</td><td>$80</td></tr>
+          <tr><td>Weekend Surcharge</td><td>+$10</td><td>Sat &amp; Sun</td></tr>
+          <tr><td>Holiday Surcharge</td><td>+$20</td><td>Thanksgiving, Dec 25, Jan 1, etc.</td></tr>
+        </tbody></table></div>
+
+        <h3>Dog Walking – Neighbourhood Group Walks</h3>
+        <p>Social walks for dogs who love to explore and make friends. <strong>Collaborate with a neighbor — your walk will be charged at the group walk rate.</strong></p>
+        <div class="note"><strong>Please read:</strong> Rates reflect the care, attention, and supervision needed to ensure a safe, enjoyable walk for each dog in the group.</div>
+        <div class="table-wrap"><table><thead><tr><th>Duration</th><th>1 Dog</th><th>Additional Dog (same household)</th></tr></thead><tbody>
+          <tr><td>60 min</td><td>$40</td><td>+$20</td></tr>
+          <tr><td>Weekend Surcharge</td><td>+$15</td><td>Sat &amp; Sun</td></tr>
+          <tr><td>Holiday Surcharge</td><td>+$20</td><td>Thanksgiving, Dec 25, Jan 1, etc.</td></tr>
+        </tbody></table></div>
+
+        <div class="photo-grid">
+          <img src="5_RosieandOlive.jpg" alt="Rosie and Olive" />
+          <img src="6_Rosie.png" alt="Rosie" />
+          <img src="7_Kim.png" alt="Kim" />
+          <img src="8_Gigi.png" alt="Gigi" />
+        </div>
+        <div class="photo-wide"><img src="9_GGBridge.jpg" alt="Rita with dogs at Golden Gate Bridge" /></div>
+        <div class="photo-grid">
+          <img src="10_Kevin.JPG" alt="Kevin" />
+          <img src="11_Benchdry.png" alt="Bench dry" />
+          <img src="12_BenchWet.png" alt="Bench wet" />
+        </div>
       </div>
     </section>
+
     <section id="contact">
       <div class="contact-box">
         <h2>Contact Me</h2>
@@ -158,6 +180,7 @@
         <p><strong style="color:#fff;">Phone:</strong> <a href="tel:+14155095039">(415) 509-5039</a></p>
       </div>
     </section>
+
   </main>
   <footer>
     <p>&copy; 2025 Rita's Pet Care Services · San Francisco, CA</p>
