@@ -26,9 +26,6 @@
       --text: #4a4a4a;
       --text-dark: #2b2b2b;
       --border: #e0e0e0;
-      --row-alt: #f0f0f0;
-      --thead-bg: #e8e8e8;
-      --thead-border: #cccccc;
       --note-bg: #fef0ee;
       --note-border: #e8624a;
       --contact-bg: #5a5a5a;
@@ -98,20 +95,38 @@
 
     .note { background: var(--note-bg); border-left: 4px solid var(--note-border); padding: 0.85rem 1rem; border-radius: 0 6px 6px 0; margin: 0.75rem 0 1.25rem; font-size: 0.97rem; font-style: italic; }
 
-    .photo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0; }
-    .photo-grid img { height: 210px; width: 210px; object-fit: cover; border-radius: 10px; display: block; transition: transform 0.3s, box-shadow 0.3s; }
-    .photo-grid img:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-
+    /* BASE TABLE */
     .table-wrap { overflow-x: auto; margin: 0.75rem 0 1rem; border-radius: 10px; border: 1px solid var(--border); }
     table { width: 100%; border-collapse: collapse; font-size: 0.97rem; min-width: 380px; }
-    thead tr { background: var(--thead-bg); }
-    thead th { padding: 0.75rem 1rem; text-align: left; font-weight: 700; color: var(--heading); border-bottom: 2px solid var(--thead-border); font-size: 0.85rem; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.03em; }
-    tbody tr:nth-child(even) { background: var(--row-alt); }
-    tbody tr:nth-child(odd) { background: #fff; }
-    tbody td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); color: var(--text); }
+    thead th { padding: 0.75rem 1rem; text-align: left; font-weight: 700; border-bottom: 3px solid rgba(0,0,0,0.15); font-size: 0.85rem; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.03em; color: #fff; }
+    tbody td { padding: 0.7rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.08); color: var(--text); }
     tbody td:first-child { color: var(--text-dark); }
     tbody td:nth-child(2) { color: #3a3a3a; font-weight: 700; font-size: 1.05rem; }
     tbody tr:last-child td { border-bottom: none; }
+
+    /* PURPLE — Overnight */
+    .table-purple thead tr { background: #7c5cbf; }
+    .table-purple tbody tr:nth-child(odd)  { background: #fff; }
+    .table-purple tbody tr:nth-child(even) { background: #f3eeff; }
+
+    /* GREEN — Drop-In */
+    .table-green thead tr { background: #4a9e6b; }
+    .table-green tbody tr:nth-child(odd)  { background: #fff; }
+    .table-green tbody tr:nth-child(even) { background: #edf7f1; }
+
+    /* ORANGE — Private Walks */
+    .table-orange thead tr { background: #e07b3a; }
+    .table-orange tbody tr:nth-child(odd)  { background: #fff; }
+    .table-orange tbody tr:nth-child(even) { background: #fff4ee; }
+
+    /* YELLOW — Group Walks */
+    .table-yellow thead tr { background: #c9a800; }
+    .table-yellow tbody tr:nth-child(odd)  { background: #fff; }
+    .table-yellow tbody tr:nth-child(even) { background: #fffce8; }
+
+    .photo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0; }
+    .photo-grid img { height: 210px; width: 210px; object-fit: cover; border-radius: 10px; display: block; transition: transform 0.3s, box-shadow 0.3s; }
+    .photo-grid img:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
 
     footer { text-align: center; padding: 1.5rem 1rem; font-size: 0.85rem; color: #999; border-top: 1px solid var(--border); background: #fff; }
   </style>
@@ -169,14 +184,12 @@
       <p>I have two cats of my own, Olive and Rosie, so I know exactly how it feels to trust someone else with your furry family. Follow their adventures on Instagram: <a href="https://www.instagram.com/oliveandrosiesf/" target="_blank" rel="noopener">@oliveandrosiesf</a>.</p>
       <p>I offer <strong>pet sitting at your house, drop-ins, private walks, and neighbourhood group walks.</strong> I can send photo updates during my services upon request. I'll treat your pet like it would be my own.</p>
       <div class="note"><strong>Please read:</strong> My rates reflect the cost of living in San Francisco, allowing me to continue providing reliable, professional care for your pets in the city. Weekend and holiday surcharges apply.</div>
-      <!-- Row 1 -->
       <div class="photo-grid">
         <img src="4_Olive.png" alt="Olive" />
         <img src="5_RosieandOlive.jpg" alt="Rosie and Olive" />
         <img src="6_Rosie.png" alt="Rosie" />
         <img src="7_Kim.png" alt="Kim" />
       </div>
-      <!-- Row 2 replaces the wide beach photo -->
       <div class="photo-grid">
         <img src="8_Gigi.png" alt="Gigi" />
         <img src="10_Kevin.JPG" alt="Kevin" />
@@ -193,13 +206,13 @@
     </div>
   </div>
 
-  <!-- OVERNIGHT: GRAY -->
+  <!-- OVERNIGHT: GRAY + PURPLE TABLE -->
   <section class="section-gray">
     <div class="section-inner">
       <h3>In-Home Overnight Pet Sitting (Cats &amp; Dogs)</h3>
       <p>Personalized, in-home care that gives your pets comfort, consistency, and companionship while you're away. Care includes evening and morning feedings, potty breaks, and full overnight supervision.</p>
       <div class="note"><strong>Please read:</strong> Cats and dogs are charged the same because every pet deserves the same level of attention, supervision, and professional care.</div>
-      <div class="table-wrap"><table><thead><tr><th>Service</th><th>Price/night</th><th>Notes</th></tr></thead><tbody>
+      <div class="table-wrap"><table class="table-purple"><thead><tr><th>Service</th><th>Price/night</th><th>Notes</th></tr></thead><tbody>
         <tr><td>1–2 Pets</td><td>$125</td><td>Evening through morning care</td></tr>
         <tr><td>Additional Pet</td><td>+$25</td><td>Add for each extra pet</td></tr>
         <tr><td>Special Needs</td><td>+$20</td><td>Special care &amp; medication*</td></tr>
@@ -210,13 +223,13 @@
     </div>
   </section>
 
-  <!-- DROP-IN: WHITE -->
+  <!-- DROP-IN: WHITE + GREEN TABLE -->
   <section class="section-white">
     <div class="section-inner">
       <h3>Drop-In Visits (Cats &amp; Dogs)</h3>
       <p>Each visit is at least 30 minutes and includes feeding, potty or litter care, playtime, and supervision.</p>
       <div class="note"><strong>Please read:</strong> Rates are the same for cats and dogs because all pets receive the same time, attention, and professional care.</div>
-      <div class="table-wrap"><table><thead><tr><th>Duration</th><th>1 Pet</th><th>2 Pets</th></tr></thead><tbody>
+      <div class="table-wrap"><table class="table-green"><thead><tr><th>Duration</th><th>1 Pet</th><th>2 Pets</th></tr></thead><tbody>
         <tr><td>30 min</td><td>$30</td><td>$45</td></tr>
         <tr><td>60 min</td><td>$50</td><td>$75</td></tr>
         <tr><td>3 hours</td><td>$85</td><td>$100</td></tr>
@@ -227,13 +240,13 @@
     </div>
   </section>
 
-  <!-- PRIVATE WALKS: GRAY -->
+  <!-- PRIVATE WALKS: GRAY + ORANGE TABLE -->
   <section class="section-gray">
     <div class="section-inner">
       <h3>Dog Walking – Private Walks</h3>
       <p>1-on-1 walks for dogs who are anxious, reactive, or need extra attention. Discounted rates for two dogs from the same household.</p>
       <div class="note"><strong>Please read:</strong> Rates reflect the time, attention, and professional supervision provided during every walk.</div>
-      <div class="table-wrap"><table><thead><tr><th>Duration</th><th>1 Dog</th><th>2 Dogs</th></tr></thead><tbody>
+      <div class="table-wrap"><table class="table-orange"><thead><tr><th>Duration</th><th>1 Dog</th><th>2 Dogs</th></tr></thead><tbody>
         <tr><td>30 min</td><td>$35</td><td>$45</td></tr>
         <tr><td>60 min</td><td>$60</td><td>$80</td></tr>
         <tr><td>Weekend Surcharge</td><td>+$10</td><td>Sat &amp; Sun</td></tr>
@@ -242,13 +255,13 @@
     </div>
   </section>
 
-  <!-- GROUP WALKS: WHITE -->
+  <!-- GROUP WALKS: WHITE + YELLOW TABLE -->
   <section class="section-white">
     <div class="section-inner">
       <h3>Dog Walking – Neighbourhood Group Walks</h3>
       <p>Social walks for dogs who love to explore and make friends. <strong>Collaborate with a neighbor — your walk will be charged at the group walk rate.</strong></p>
       <div class="note"><strong>Please read:</strong> Rates reflect the care, attention, and supervision needed to ensure a safe, enjoyable walk for each dog in the group.</div>
-      <div class="table-wrap"><table><thead><tr><th>Duration</th><th>1 Dog</th><th>Additional Dog (same household)</th></tr></thead><tbody>
+      <div class="table-wrap"><table class="table-yellow"><thead><tr><th>Duration</th><th>1 Dog</th><th>Additional Dog (same household)</th></tr></thead><tbody>
         <tr><td>60 min</td><td>$40</td><td>+$20</td></tr>
         <tr><td>Weekend Surcharge</td><td>+$15</td><td>Sat &amp; Sun</td></tr>
         <tr><td>Holiday Surcharge</td><td>+$20</td><td>Thanksgiving, Dec 25, Jan 1, etc.</td></tr>
