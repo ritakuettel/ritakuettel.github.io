@@ -29,11 +29,12 @@
     html { scroll-behavior: smooth; }
 
     /* HEADER */
-    header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 4vw; }
+    header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 200; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .header-inner { display: flex; align-items: flex-start; justify-content: space-between; padding: 0.6rem 4vw; }
     header img.logo { height: 260px; width: auto; display: block; }
 
-    /* NAV */
+    /* NAV — aligned to top of header */
+    nav { padding-top: 0.75rem; }
     nav ul { list-style: none; display: flex; align-items: center; }
     nav ul li { position: relative; }
     nav ul li a { display: block; padding: 0.6rem 1.1rem; color: var(--heading); text-decoration: none; font-size: 0.9rem; font-weight: 700; font-family: 'Montserrat', sans-serif; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 4px; transition: background 0.2s, color 0.2s; white-space: nowrap; }
@@ -41,11 +42,10 @@
     nav ul li a.contact-link { color: var(--heading); border-radius: 6px; margin-left: 0.5rem; }
     nav ul li a.contact-link:hover { background: var(--sky); color: #fff; }
 
-    /* DROPDOWN */
-    .has-dropdown > a { display: flex; align-items: center; gap: 0.3rem; }
-    .has-dropdown > a::after { content: '▾'; font-size: 0.75rem; }
-    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); min-width: 240px; z-index: 200; overflow: hidden; }
-    .dropdown a { padding: 0.65rem 1.1rem; font-size: 0.82rem; letter-spacing: 0.04em; border-radius: 0; color: var(--heading); display: block; border-bottom: 1px solid var(--border); }
+    /* DROPDOWN — no arrows, light blue opaque */
+    .has-dropdown > a::after { content: none; }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: rgba(198, 232, 247, 0.97); border: 1px solid #a8d4ec; border-radius: 8px; box-shadow: 0 8px 24px rgba(90,168,208,0.15); min-width: 220px; z-index: 300; overflow: hidden; }
+    .dropdown a { padding: 0.65rem 1.1rem; font-size: 0.82rem; letter-spacing: 0.04em; border-radius: 0; color: var(--heading); display: block; border-bottom: 1px solid rgba(90,168,208,0.2); background: transparent; }
     .dropdown a:last-child { border-bottom: none; }
     .dropdown a:hover { background: var(--sky); color: #fff; }
     .has-dropdown:hover .dropdown,
@@ -56,6 +56,8 @@
 
     @media (max-width: 680px) {
       header img.logo { height: 110px; }
+      .header-inner { align-items: center; }
+      nav { padding-top: 0; }
       .menu-toggle { display: block; }
       nav ul { flex-direction: column; display: none; padding: 0.5rem 0; border-top: 1px solid var(--border); width: 100%; }
       nav ul.open { display: flex; }
@@ -66,11 +68,10 @@
       :root { --pad: 2rem 5vw; }
       .contact-bar-inner { flex-direction: column !important; }
       .contact-images { margin-top: 1rem; }
-      .dropdown { position: static; box-shadow: none; border: none; border-radius: 0; background: #f8f8f8; }
-      .dropdown a { padding-left: 2.5rem; font-size: 0.8rem; }
+      .dropdown { position: static; box-shadow: none; border-radius: 0; }
       .has-dropdown .dropdown { display: none; }
       .has-dropdown.open .dropdown { display: block; }
-      .has-dropdown > a::after { margin-left: auto; }
+      .dropdown a { padding-left: 2.5rem; }
     }
 
     /* CONTACT BAR */
@@ -148,7 +149,7 @@
         <ul id="main-nav">
           <li><a href="#about">About</a></li>
           <li class="has-dropdown">
-            <a href="#services">Services ▾</a>
+            <a href="#services">Services</a>
             <ul class="dropdown">
               <li><a href="#overnight">Pet Sitting</a></li>
               <li><a href="#dropin">Drop-Ins</a></li>
@@ -307,7 +308,6 @@
   </footer>
 
   <script>
-    // Smooth scroll with header offset
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const href = a.getAttribute('href');
@@ -317,17 +317,14 @@
           const offset = document.querySelector('header').offsetHeight + 16;
           window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
         }
-        // Close mobile nav on click
         document.getElementById('main-nav').classList.remove('open');
       });
     });
 
-    // Mobile menu toggle
     function toggleMenu() {
       document.getElementById('main-nav').classList.toggle('open');
     }
 
-    // Mobile dropdown toggle
     document.querySelectorAll('.has-dropdown > a').forEach(a => {
       a.addEventListener('click', e => {
         if (window.innerWidth <= 680) {
