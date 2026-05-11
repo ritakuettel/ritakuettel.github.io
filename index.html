@@ -19,7 +19,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f9f9f9;
       --sky: #5aa8d0;
       --sky-dark: #4090b8;
       --coral: #e8624a;
@@ -27,133 +26,68 @@
       --text: #4a4a4a;
       --text-dark: #2b2b2b;
       --border: #e0e0e0;
-      --row-alt: #f5f5f5;
+      --row-alt: #f0f0f0;
       --thead-bg: #e8e8e8;
       --thead-border: #cccccc;
       --note-bg: #fef0ee;
       --note-border: #e8624a;
       --contact-bg: #3a3a3a;
-      --section-pad: 4rem 6vw;
+      --pad: 3.5rem 6vw;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-weight: 400; }
+    body { font-family: 'Source Sans 3', sans-serif; color: var(--text); line-height: 1.7; font-weight: 400; }
 
-    /* ── HEADER ── */
-    header {
-      background: #fff;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.6rem 4vw;
-    }
-    header img.logo {
-      height: 100px;
-      width: auto;
-      display: block;
-    }
-    nav ul { list-style: none; display: flex; align-items: center; gap: 0; }
-    nav ul li a {
-      display: block;
-      padding: 0.6rem 1.1rem;
-      color: var(--heading);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-family: 'Montserrat', sans-serif;
-      border-radius: 4px;
-      transition: background 0.2s, color 0.2s;
-    }
+    /* HEADER */
+    header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 4vw; }
+    header img.logo { height: 100px; width: auto; display: block; }
+    nav ul { list-style: none; display: flex; align-items: center; }
+    nav ul li a { display: block; padding: 0.6rem 1.1rem; color: var(--heading); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; font-family: 'Montserrat', sans-serif; border-radius: 4px; transition: background 0.2s, color 0.2s; }
     nav ul li a:hover { background: var(--sky); color: #fff; }
-    nav ul li a.contact-link {
-      background: var(--sky);
-      color: #fff;
-      border-radius: 6px;
-      margin-left: 0.5rem;
-      padding: 0.6rem 1.2rem;
-    }
+    nav ul li a.contact-link { background: var(--sky); color: #fff; border-radius: 6px; margin-left: 0.5rem; padding: 0.6rem 1.2rem; }
     nav ul li a.contact-link:hover { background: var(--sky-dark); }
-
     .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
     .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--heading); margin: 5px 0; border-radius: 2px; }
 
     @media (max-width: 680px) {
       header img.logo { height: 70px; }
       .menu-toggle { display: block; }
-      nav { width: 100%; }
       nav ul { flex-direction: column; display: none; padding: 0.5rem 0; border-top: 1px solid var(--border); }
       nav ul.open { display: flex; }
       nav ul li { width: 100%; }
       nav ul li a { padding: 0.75rem 1.5rem; border-radius: 0; }
       nav ul li a.contact-link { margin: 0.5rem 1rem; border-radius: 6px; text-align: center; }
       .header-inner { flex-wrap: wrap; padding: 0.6rem 1rem; }
-      :root { --section-pad: 2.5rem 5vw; }
+      :root { --pad: 2.5rem 5vw; }
     }
 
-    /* ── CONTACT BAR ── */
-    .contact-bar {
-      background: var(--contact-bg);
-      color: #fff;
-      text-align: center;
-      padding: 2rem 4vw;
-    }
+    /* CONTACT BAR */
+    .contact-bar { background: var(--contact-bg); color: #fff; text-align: center; padding: 2rem 4vw; }
     .contact-bar h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 0.6rem; }
     .contact-bar p { color: rgba(255,255,255,0.88); margin: 0.3rem 0; font-size: 1rem; }
     .contact-bar a { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
     .contact-bar a:hover { color: #ccc; }
 
-    /* ── SECTIONS ── */
-    .section-white { background: #fff; padding: var(--section-pad); }
-    .section-gray  { background: #f2f2f2; padding: var(--section-pad); }
-
+    /* SECTIONS */
+    .section-white { background: #ffffff; padding: var(--pad); }
+    .section-gray  { background: #f2f2f2; padding: var(--pad); }
     .section-inner { max-width: 1100px; margin: 0 auto; }
 
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--heading);
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-    h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--heading);
-      margin: 2.5rem 0 0.6rem;
-      border-left: 4px solid var(--sky);
-      padding-left: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
+    /* SERVICES HEADER BAND */
+    .services-header { background: var(--sky); padding: 2.5rem 6vw; }
+    .services-header h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; max-width: 1100px; margin: 0 auto; }
+
+    h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--heading); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+    h3 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: var(--heading); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.02em; }
     p { margin-bottom: 1rem; font-size: 1.05rem; color: var(--text); }
     a { color: var(--sky); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
     a:hover { color: var(--coral); }
     strong { font-weight: 600; color: var(--text-dark); }
     em { font-style: italic; color: #777; }
 
-    .note {
-      background: var(--note-bg);
-      border-left: 4px solid var(--note-border);
-      padding: 0.85rem 1rem;
-      border-radius: 0 6px 6px 0;
-      margin: 0.75rem 0 1.25rem;
-      font-size: 0.97rem;
-      color: var(--text);
-      font-style: italic;
-    }
+    .note { background: var(--note-bg); border-left: 4px solid var(--note-border); padding: 0.85rem 1rem; border-radius: 0 6px 6px 0; margin: 0.75rem 0 1.25rem; font-size: 0.97rem; font-style: italic; }
 
-    /* ── TABLES ── */
-    .table-wrap { overflow-x: auto; margin: 0.75rem 0 2rem; border-radius: 10px; border: 1px solid var(--border); }
+    .table-wrap { overflow-x: auto; margin: 0.75rem 0 1rem; border-radius: 10px; border: 1px solid var(--border); }
     table { width: 100%; border-collapse: collapse; font-size: 0.97rem; min-width: 380px; }
     thead tr { background: var(--thead-bg); }
     thead th { padding: 0.75rem 1rem; text-align: left; font-weight: 700; color: var(--heading); border-bottom: 2px solid var(--thead-border); font-size: 0.85rem; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.03em; }
@@ -164,14 +98,11 @@
     tbody td:nth-child(2) { color: #3a3a3a; font-weight: 700; font-size: 1.05rem; }
     tbody tr:last-child td { border-bottom: none; }
 
-    /* ── PHOTOS ── */
     .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
-    .photo-grid img { width: 100%; height: 210px; object-fit: cover; border-radius: 10px; display: block; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .photo-grid img { width: 100%; height: 210px; object-fit: cover; border-radius: 10px; display: block; transition: transform 0.3s, box-shadow 0.3s; }
     .photo-grid img:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-    .photo-wide { margin: 2rem 0; }
-    .photo-wide img { width: 100%; max-height: 420px; object-fit: cover; border-radius: 12px; display: block; }
+    .photo-wide img { width: 100%; max-height: 420px; object-fit: cover; border-radius: 12px; display: block; margin: 2rem 0; }
 
-    /* ── FOOTER ── */
     footer { text-align: center; padding: 1.5rem 1rem; font-size: 0.85rem; color: #999; border-top: 1px solid var(--border); background: #fff; }
   </style>
 </head>
@@ -219,11 +150,14 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section-gray">
-    <div class="section-inner">
-      <h2>Services &amp; Rates</h2>
+  <!-- SERVICES HEADING BAND -->
+  <div class="services-header" id="services">
+    <h2>Services &amp; Rates</h2>
+  </div>
 
+  <!-- OVERNIGHT: GRAY -->
+  <section class="section-gray">
+    <div class="section-inner">
       <h3>In-Home Overnight Pet Sitting (Cats &amp; Dogs)</h3>
       <p>Personalized, in-home care that gives your pets comfort, consistency, and companionship while you're away. Care includes evening and morning feedings, potty breaks, and full overnight supervision.</p>
       <div class="note"><strong>Please read:</strong> Cats and dogs are charged the same because every pet deserves the same level of attention, supervision, and professional care.</div>
@@ -235,7 +169,12 @@
         <tr><td>Holiday Surcharge</td><td>+$25</td><td>Thanksgiving, Dec 25, Jan 1, etc.</td></tr>
       </tbody></table></div>
       <p><em>*I'm trained to administer insulin injections for diabetic pets.</em></p>
+    </div>
+  </section>
 
+  <!-- DROP-IN: WHITE -->
+  <section class="section-white">
+    <div class="section-inner">
       <h3>Drop-In Visits (Cats &amp; Dogs)</h3>
       <p>Each visit is at least 30 minutes and includes feeding, potty or litter care, playtime, and supervision.</p>
       <div class="note"><strong>Please read:</strong> Rates are the same for cats and dogs because all pets receive the same time, attention, and professional care.</div>
@@ -247,7 +186,12 @@
         <tr><td>Weekend Surcharge</td><td>+$15</td><td>Sat &amp; Sun per visit</td></tr>
         <tr><td>Holiday Surcharge</td><td>+$25</td><td>Per visit</td></tr>
       </tbody></table></div>
+    </div>
+  </section>
 
+  <!-- PRIVATE WALKS: GRAY -->
+  <section class="section-gray">
+    <div class="section-inner">
       <h3>Dog Walking – Private Walks</h3>
       <p>1-on-1 walks for dogs who are anxious, reactive, or need extra attention. Discounted rates for two dogs from the same household.</p>
       <div class="note"><strong>Please read:</strong> Rates reflect the time, attention, and professional supervision provided during every walk.</div>
@@ -257,7 +201,12 @@
         <tr><td>Weekend Surcharge</td><td>+$10</td><td>Sat &amp; Sun</td></tr>
         <tr><td>Holiday Surcharge</td><td>+$20</td><td>Thanksgiving, Dec 25, Jan 1, etc.</td></tr>
       </tbody></table></div>
+    </div>
+  </section>
 
+  <!-- GROUP WALKS: WHITE -->
+  <section class="section-white">
+    <div class="section-inner">
       <h3>Dog Walking – Neighbourhood Group Walks</h3>
       <p>Social walks for dogs who love to explore and make friends. <strong>Collaborate with a neighbor — your walk will be charged at the group walk rate.</strong></p>
       <div class="note"><strong>Please read:</strong> Rates reflect the care, attention, and supervision needed to ensure a safe, enjoyable walk for each dog in the group.</div>
@@ -266,7 +215,12 @@
         <tr><td>Weekend Surcharge</td><td>+$15</td><td>Sat &amp; Sun</td></tr>
         <tr><td>Holiday Surcharge</td><td>+$20</td><td>Thanksgiving, Dec 25, Jan 1, etc.</td></tr>
       </tbody></table></div>
+    </div>
+  </section>
 
+  <!-- PHOTOS: GRAY -->
+  <section class="section-gray">
+    <div class="section-inner">
       <div class="photo-grid">
         <img src="5_RosieandOlive.jpg" alt="Rosie and Olive" />
         <img src="6_Rosie.png" alt="Rosie" />
