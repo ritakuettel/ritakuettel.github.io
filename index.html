@@ -40,7 +40,7 @@
     /* HEADER */
     header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
     .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 4vw; }
-    header img.logo { height: 100px; width: auto; display: block; }
+    header img.logo { height: 200px; width: auto; display: block; }
     nav ul { list-style: none; display: flex; align-items: center; }
     nav ul li a { display: block; padding: 0.6rem 1.1rem; color: var(--heading); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; font-family: 'Montserrat', sans-serif; border-radius: 4px; transition: background 0.2s, color 0.2s; }
     nav ul li a:hover { background: var(--sky); color: #fff; }
@@ -50,7 +50,7 @@
     .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--heading); margin: 5px 0; border-radius: 2px; }
 
     @media (max-width: 680px) {
-      header img.logo { height: 70px; }
+      header img.logo { height: 100px; }
       .menu-toggle { display: block; }
       nav ul { flex-direction: column; display: none; padding: 0.5rem 0; border-top: 1px solid var(--border); }
       nav ul.open { display: flex; }
@@ -59,19 +59,23 @@
       nav ul li a.contact-link { margin: 0.5rem 1rem; border-radius: 6px; text-align: center; }
       .header-inner { flex-wrap: wrap; padding: 0.6rem 1rem; }
       :root { --pad: 2.5rem 5vw; }
+      .contact-bar-inner { flex-direction: column !important; }
+      .contact-images { justify-content: flex-start !important; }
     }
 
     /* CONTACT BAR */
     .contact-bar { background: var(--contact-bg); color: #fff; padding: 2rem 4vw; }
+    .contact-bar-inner { display: flex; align-items: center; gap: 2rem; }
     .contact-bar.align-left  { text-align: left; }
+    .contact-bar.align-left  .contact-bar-inner { flex-direction: row; justify-content: space-between; }
     .contact-bar.align-right { text-align: right; }
-    .contact-bar h2 { font-family: 'Source Sans 3', sans-serif; font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 0.3rem; display: inline; }
+    .contact-bar.align-right .contact-bar-inner { flex-direction: row-reverse; justify-content: space-between; }
+    .contact-info { flex-shrink: 0; }
+    .contact-bar h2 { font-family: 'Source Sans 3', sans-serif; font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 0.3rem; }
     .contact-bar p { color: rgba(255,255,255,0.88); margin: 0.3rem 0; font-size: 1rem; }
     .contact-bar a { color: #f0c080; font-weight: 600; text-decoration: none; transition: color 0.2s; }
     .contact-bar a:hover { color: #fff; }
-
-    /* CONTACT IMAGE STRIP */
-    .contact-images { display: flex; gap: 0.6rem; margin-top: 1.25rem; overflow-x: auto; padding-bottom: 0.25rem; }
+    .contact-images { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
     .contact-bar.align-left  .contact-images { justify-content: flex-end; }
     .contact-bar.align-right .contact-images { justify-content: flex-start; }
     .contact-images img { height: 80px; width: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.25); transition: transform 0.2s, border-color 0.2s; }
@@ -131,20 +135,24 @@
     </div>
   </header>
 
-  <!-- CONTACT TOP — left aligned, images right -->
+  <!-- CONTACT TOP — left text, images right -->
   <div class="contact-bar align-left" id="contact-top">
-    <h2>Contact Me</h2>
-    <p>Ready to give your pet the care they deserve?</p>
-    <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetssf@gmail.com">ritaspetssf@gmail.com</a></p>
-    <p><strong style="color:#fff;">Phone:</strong> <a href="tel:+14155095039">(415) 509-5039</a></p>
-    <div class="contact-images">
-      <img src="1_whiteDog.jpg" alt="White dog" />
-      <img src="3_Teddy.jpg" alt="Teddy" />
-      <img src="4_Olive.png" alt="Olive" />
-      <img src="6_Rosie.png" alt="Rosie" />
-      <img src="7_Kim.png" alt="Kim" />
-      <img src="8_Gigi.png" alt="Gigi" />
-      <img src="10_Kevin.JPG" alt="Kevin" />
+    <div class="contact-bar-inner">
+      <div class="contact-info">
+        <h2>Contact Me</h2>
+        <p>Ready to give your pet the care they deserve?</p>
+        <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetssf@gmail.com">ritaspetssf@gmail.com</a></p>
+        <p><strong style="color:#fff;">Phone:</strong> <a href="tel:+14155095039">(415) 509-5039</a></p>
+      </div>
+      <div class="contact-images">
+        <img src="1_whiteDog.jpg" alt="White dog" />
+        <img src="3_Teddy.jpg" alt="Teddy" />
+        <img src="4_Olive.png" alt="Olive" />
+        <img src="6_Rosie.png" alt="Rosie" />
+        <img src="7_Kim.png" alt="Kim" />
+        <img src="8_Gigi.png" alt="Gigi" />
+        <img src="10_Kevin.JPG" alt="Kevin" />
+      </div>
     </div>
   </div>
 
@@ -253,20 +261,24 @@
     </div>
   </section>
 
-  <!-- CONTACT BOTTOM — right aligned, images left -->
+  <!-- CONTACT BOTTOM — right text, images left -->
   <div class="contact-bar align-right" id="contact">
-    <h2>Contact Me</h2>
-    <p>Ready to give your pet the care they deserve?</p>
-    <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetssf@gmail.com">ritaspetssf@gmail.com</a></p>
-    <p><strong style="color:#fff;">Phone:</strong> <a href="tel:+14155095039">(415) 509-5039</a></p>
-    <div class="contact-images">
-      <img src="2_Fox.jpg" alt="Fox" />
-      <img src="5_RosieandOlive.jpg" alt="Rosie and Olive" />
-      <img src="8_Gigi.png" alt="Gigi" />
-      <img src="9_GGBridge.jpg" alt="Golden Gate Bridge" />
-      <img src="11_Benchdry.png" alt="Bench dry" />
-      <img src="12_BenchWet.png" alt="Bench wet" />
-      <img src="4_Olive.png" alt="Olive" />
+    <div class="contact-bar-inner">
+      <div class="contact-info">
+        <h2>Contact Me</h2>
+        <p>Ready to give your pet the care they deserve?</p>
+        <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetssf@gmail.com">ritaspetssf@gmail.com</a></p>
+        <p><strong style="color:#fff;">Phone:</strong> <a href="tel:+14155095039">(415) 509-5039</a></p>
+      </div>
+      <div class="contact-images">
+        <img src="2_Fox.jpg" alt="Fox" />
+        <img src="5_RosieandOlive.jpg" alt="Rosie and Olive" />
+        <img src="8_Gigi.png" alt="Gigi" />
+        <img src="9_GGBridge.jpg" alt="Golden Gate Bridge" />
+        <img src="11_Benchdry.png" alt="Bench dry" />
+        <img src="12_BenchWet.png" alt="Bench wet" />
+        <img src="4_Olive.png" alt="Olive" />
+      </div>
     </div>
   </div>
 
