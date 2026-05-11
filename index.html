@@ -62,7 +62,9 @@
     }
 
     /* CONTACT BAR */
-    .contact-bar { background: var(--contact-bg); color: #fff; text-align: center; padding: 2rem 4vw; }
+    .contact-bar { background: var(--contact-bg); color: #fff; padding: 2rem 4vw; }
+    .contact-bar.align-right { text-align: right; }
+    .contact-bar.align-left  { text-align: left; }
     .contact-bar h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 0.6rem; }
     .contact-bar p { color: rgba(255,255,255,0.88); margin: 0.3rem 0; font-size: 1rem; }
     .contact-bar a { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
@@ -73,9 +75,9 @@
     .section-gray  { background: #f2f2f2; padding: var(--pad); }
     .section-inner { max-width: 1100px; margin: 0 auto; }
 
-    /* SERVICES HEADER BAND */
-    .services-header { background: var(--sky); padding: 2.5rem 6vw; }
-    .services-header h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; max-width: 1100px; margin: 0 auto; }
+    /* SERVICES HEADING — same style as About Me */
+    .services-header { background: #ffffff; padding: var(--pad); padding-bottom: 0; }
+    .services-header .section-inner { border-bottom: none; }
 
     h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--heading); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
     h3 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: var(--heading); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.02em; }
@@ -125,8 +127,8 @@
     </div>
   </header>
 
-  <!-- CONTACT TOP -->
-  <div class="contact-bar" id="contact-top">
+  <!-- CONTACT TOP — right aligned -->
+  <div class="contact-bar align-right" id="contact-top">
     <h2>Contact Me</h2>
     <p>Ready to give your pet the care they deserve?</p>
     <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetcarelove@gmail.com">ritaspetcarelove@gmail.com</a></p>
@@ -150,9 +152,11 @@
     </div>
   </section>
 
-  <!-- SERVICES HEADING BAND -->
+  <!-- SERVICES HEADING — white, same style as About Me -->
   <div class="services-header" id="services">
-    <h2>Services &amp; Rates</h2>
+    <div class="section-inner">
+      <h2>Services &amp; Rates</h2>
+    </div>
   </div>
 
   <!-- OVERNIGHT: GRAY -->
@@ -236,8 +240,8 @@
     </div>
   </section>
 
-  <!-- CONTACT BOTTOM -->
-  <div class="contact-bar" id="contact">
+  <!-- CONTACT BOTTOM — left aligned -->
+  <div class="contact-bar align-left" id="contact">
     <h2>Contact Me</h2>
     <p>Ready to give your pet the care they deserve?</p>
     <p><strong style="color:#fff;">Email:</strong> <a href="mailto:ritaspetcarelove@gmail.com">ritaspetcarelove@gmail.com</a></p>
@@ -245,7 +249,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 Rita's Pet Care Services · San Francisco, CA</p>
+    <p>&copy; 2026 Rita's Pet Care Services · San Francisco, CA</p>
   </footer>
 
 </body>
